@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'expo-router';
 import { Text, View, StyleSheet, Image, Dimensions, FlatList } from "react-native";
 import { PaperProvider, IconButton, ProgressBar, Button} from 'react-native-paper';
 
@@ -65,7 +66,9 @@ export default function PlaylistPage() {
         <ProgressBar progress={0.3} color="#D9D9D9" style={styles.progresso} />
         <View style={styles.menu}>
           <View style={styles.ButtonControles}>
+          <Link href={'/'} asChild>
             <IconButton icon="home" size={30} iconColor="#FFF" onPress={() => {}} />
+          </Link>
           </View>
           <View style={styles.ButtonControles}>
             <IconButton icon="magnify" size={30} iconColor="#FFF" onPress={() => {}} />

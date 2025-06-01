@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
+import { Link } from 'expo-router';
 import { PaperProvider, ProgressBar, IconButton } from 'react-native-paper';
 
 
@@ -30,15 +31,18 @@ export default function Index() {
         
         <View style={styles.menu}>
           <View style={styles.ButtonControles}>
+          <Link href={'/'} asChild>
           <IconButton icon="home" size={30} iconColor="#FFF" onPress={() => {}} />
+          </Link>
           </View>
           <View style={styles.ButtonControles}>
 
           <IconButton icon="magnify" size={30} iconColor="#FFF" onPress={() => {}} />
           </View>
           <View style={styles.ButtonControles}>
-
+          <Link href={'/ListaPlays'} asChild>
           <IconButton icon="menu" size={30} iconColor="#FFF" onPress={() => {}} />
+          </Link>
           </View>
         </View>
 
