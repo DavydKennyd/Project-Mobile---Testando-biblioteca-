@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
 import { Link } from 'expo-router';
 import { PaperProvider, ProgressBar, IconButton } from 'react-native-paper';
-
+import * as Font from 'expo-font';
 
 const {width, height} = Dimensions.get('window')
 export default function Index() {
@@ -59,10 +59,13 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   appName: {
-    fontFamily: '',
-    fontSize: 20,
+    fontSize: 22,
     color: "#FFF",
     marginBottom: 20,
+    fontFamily: 'Oswald',
+    textShadowColor: 'rgba(0, 0, 0, 0.90)',
+    textShadowOffset: { width: 5, height: 5 },
+    textShadowRadius: 5,
   },
   capa: {
     width: width * 0.65,  

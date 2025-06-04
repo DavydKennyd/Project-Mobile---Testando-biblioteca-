@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'expo-router';
 import { Text, View, StyleSheet, Image, Dimensions, FlatList } from "react-native";
 import { PaperProvider, IconButton, ProgressBar, Button} from 'react-native-paper';
-
+import * as Font from 'expo-font';
 const { width, height } = Dimensions.get('window');
 
 export default function PlaylistPage() {
@@ -24,18 +24,19 @@ export default function PlaylistPage() {
     mode="contained"
     onPress={() => console.log(`Tocando ${item.musica}`)}
     contentStyle={styles.item}
-    style={{ marginBottom: 20 }}
+    style={{ marginBottom: 20, padding: 0 }}
     labelStyle={{ textAlign: 'left' }}
   >
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-  <Image source={item.imagem} style={styles.capa} />
-    <View style={styles.infoMusica}>
-      <Text style={styles.cantor}>{item.cantor}</Text>
-      <Text style={styles.musica}>{item.musica}</Text>
-  </View>
-</View>
+    <View style={styles.itemContent}>
+      <Image source={item.imagem} style={styles.capa} />
+      <View style={styles.infoMusica}>
+        <Text style={styles.cantor}>{item.cantor}</Text>
+        <Text style={styles.musica}>{item.musica}</Text>
+      </View>
+    </View>
   </Button>
 );
+
 
   return (
     <PaperProvider>
@@ -94,6 +95,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#FFF",
     marginBottom: 20,
+    fontFamily: 'Koulen',
+    textShadowColor: 'rgba(0, 0, 0, 0.90)',
+    textShadowOffset: { width: 5, height: 5 },
+    textShadowRadius: 5,
   },
   lista: {
     paddingHorizontal: 20,
@@ -101,10 +106,10 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: 'row',
-  alignItems: 'center',
-  backgroundColor: '#D9D9D9',
-  borderRadius: 20,
-  padding: 10,
+    alignItems: 'center',
+    backgroundColor: '#D9D9D9',
+    borderRadius: 20,
+    padding: 10,
   },
   listaMusica:{
     width: width * 0.90,  
@@ -161,6 +166,7 @@ const styles = StyleSheet.create({
   infoMusica: {
     justifyContent: 'center',
     height: 60,
+    flex: 1,
   },
   menu: {
     width: width * 0.90,
@@ -173,4 +179,10 @@ const styles = StyleSheet.create({
     bottom: 20,
     alignItems: 'center',
   },
+  itemContent: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: 'D9D9D9'
+},
+
 });
